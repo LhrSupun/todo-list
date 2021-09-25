@@ -70,8 +70,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch =>{
     return {
-        setTitle: (title) => dispatch(actionTypes.setTypes.setTitle(title)),
-        setError: (error) => dispatch(actionTypes.setError.setError(error)),
+        setTitle: (title) => dispatch(actionTypes.setTitle(title)),
+        setError: (error) => dispatch(actionTypes.setError(error)),
         addItem: () => dispatch(actionTypes.addItem()),
         editItem: () => dispatch(actionTypes.editItem())
     }
