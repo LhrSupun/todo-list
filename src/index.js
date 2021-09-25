@@ -4,11 +4,12 @@ import React from 'react';
 import reducer from './store/reducers/index';
 import { createStore } from 'redux';
 import ReactDOM from 'react-dom';
-//import './index.css';
-//import App from './App';
-//import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals';
 
-/*ReactDOM.render(
+/*
+import './index.css';
+import App from './App';
+ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
@@ -23,4 +24,4 @@ const app = (
 )
 ReactDOM.render(app, document.getElementById('root'));
 
-//reportWebVitals(console.log('hello world'));
+reportWebVitals(console.log('working'));
