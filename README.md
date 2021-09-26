@@ -83,3 +83,5 @@ yarn add @material-ui/icons
 adding redux
 yarn add redux
 yarn add react-redux
+
+github CI and firebase added
