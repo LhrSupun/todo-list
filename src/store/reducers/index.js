@@ -1,4 +1,5 @@
 import * as actionTypes from '../actions/actionTypes'
+//import { connect } from 'react-redux';
 
 const initialState = {
     items: [],
@@ -26,7 +27,7 @@ const items = (state = initialState, action) => {
             var index = newList.indexOf(state.item);
             console.log(index);
             if (index !== -1) {
-                newList[index].value = state.title;
+                newList[index].value = this.state.title;
                 return {
                     ...state,
                     title: "",
@@ -43,7 +44,7 @@ const items = (state = initialState, action) => {
             console.log(index);
             newList = [...state.items];
             index = newList.indexOf(state.item);
-            if (index !== -1) {
+            if (index !== 1) {
                 console.log('deleting');
                 newList.splice(index, 1);
                 return {
