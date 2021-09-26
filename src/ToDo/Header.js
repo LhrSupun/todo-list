@@ -16,9 +16,9 @@ const useStyles = makeStyles({
 const Header = () => {
     const classes = useStyles();
     return (
-        <AppBar classes ="static">
+        <AppBar position="static">
             <Toolbar className={classes.toolbar}>
-                <Typography className={classes.heading} varient="h5" align="center">Todo App</Typography>
+                <Typography className={classes.heading} varient="h4" align="center">Todo App</Typography>
             </Toolbar>
         </AppBar>
     )

@@ -12,10 +12,10 @@ const useStyles = makeStyles({
         marginTop: 16,
         marginBottom: 16,
         padding: 16,
-        boxShadow: "0px 3px 5px -px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)"
+        boxShadow: "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)"
     },
     button: {
-        marginTop: 15
+        marginTop: 16
     }
 });
 
@@ -25,7 +25,7 @@ const Form = ({ title, setTitle, addItem, editItem, edit, error, setError}) => {
         const title = event.target.value;
 
         setTitle(title);
-        if(title.title === 0){
+        if(title.length === 0){
             setError("Please Enter Title");
         } else {
             setError("");

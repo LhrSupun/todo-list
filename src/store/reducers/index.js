@@ -1,7 +1,5 @@
-import { act } from 'react-dom/test-utils'
 import * as actionTypes from '../actions/actionTypes'
 
-// Declaring states
 const initialState = {
     items: [],
     title: "",
@@ -9,12 +7,8 @@ const initialState = {
     edit: false,
     error: ""
 }
-
-//declaring functions
 const items = (state = initialState, action) => {
     switch (action.type) {
-        //ADD_ITEM
-        //Date.now() function to generate unique ids, and concatenated new item to old state
         case actionTypes.ADD_ITEM:
             const newitem = {
                 id: Date.now(),
@@ -26,12 +20,13 @@ const items = (state = initialState, action) => {
                 title: "",
                 error: ""
             }
-        //EDIT_ITEM
+
         case actionTypes.EDIT_ITEM:
-            let newList = [...state.items];
-            let index = newList.indexOf(state.item);
+            var newList = [...state.items];
+            var index = newList.indexOf(state.item);
+            console.log(index);
             if (index !== -1) {
-                newList [index].value = state.title;
+                newList[index].value = state.title;
                 return {
                     ...state,
                     title: "",
@@ -44,42 +39,39 @@ const items = (state = initialState, action) => {
                     ...state
                 }
             }
-        //DELETE_ITEM
         case actionTypes.DELETE_ITEM:
+            console.log(index);
             newList = [...state.items];
             index = newList.indexOf(state.item);
             if (index !== -1) {
+                console.log('deleting');
                 newList.splice(index, 1);
                 return {
-                    ...state,items: newList
+                    ...state,
+                    items: newList
                 }
-
             } else {
                 return {
                     ...state
                 }
             }
-        //SET_TITLE
+        
         case actionTypes.SET_TITLE:
             return {
                 ...state,
                 title: action.title
             }
-        //SET_ITEM
-        //clicked item is stored in state
         case actionTypes.SET_ITEM:
             return {
                 ...state,
                 item: action.item,
                 error: ""
             }
-        //SET_ERROR
         case actionTypes.SET_ERROR:
             return {
                 ...state,
                 error: action.error
             }
-        //SET_EDIT
         case actionTypes.SET_EDIT:
             return {
                 ...state,
@@ -92,4 +84,3 @@ const items = (state = initialState, action) => {
 }
 
 export default items;
-

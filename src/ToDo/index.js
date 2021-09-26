@@ -11,9 +11,9 @@ const useStyles = makeStyles({
     }
 });
 function Todo() {
-    const classess = useStyles();
+    const classes = useStyles();
     return (
-        <div className={classess.root}>
+        <div className={classes.root}>
             <Header />
             <Form />
             <ToDoList />

@@ -20,7 +20,7 @@ const useStyles = makeStyles ({
     }
 });
 
-function ToDoList({ todoList, setTitle, setItem, setEdit, deleteItem }) {
+function TodoList({ todoList, setTitle, setItem, setEdit, deleteItem }) {
     const classes = useStyles();
     
     const handleEdit = (item) => {
@@ -54,7 +54,7 @@ function ToDoList({ todoList, setTitle, setItem, setEdit, deleteItem }) {
                                     <EditIcon />
                                 </IconButton >
                                 <IconButton edge="end" aria-label="delete" onClick={() => handleDelete(item)}> 
-                                    <EditIcon />
+                                    <DeleteIcon />
                                 </IconButton >
                             </ListItemSecondaryAction>
                         </ListItem>
@@ -77,8 +77,8 @@ const mapDispatchToProps = dispatch => {
         setTitle: (title) => dispatch(actionTypes.setTitle(title)),
         setItem: (item) => dispatch(actionTypes.setItem(item)),
         deleteItem: (item) => dispatch(actionTypes.deleteItem(item)),
-        setEdit: () => dispatch(actionTypes.setEdit()),
+        setEdit: () => dispatch(actionTypes.setEdit())
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToDoList);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
